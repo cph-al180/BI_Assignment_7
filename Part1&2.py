@@ -4,6 +4,10 @@ import nltk
 import matplotlib.pyplot as plt
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from pylab import polyfit, poly1d
+from sklearn.model_selection import KFold
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 
 #Uncomment if first time using Vader.
 #nltk.download('vader_lexicon')
@@ -38,7 +42,20 @@ def vaderNLTK(data):
     fit_fn = np.poly1d(fit)
     plt.plot(X, y,'ro', X, fit_fn(X), 'b')
     plt.show()
-    
+    y = np.array([neg])
+    y = y.T
+    folds = KFold(n_splits = 10)
+    for train_indices, test_indices in folds.split(X, y):
+        X_train, X_test = X[train_indices], X[test_indices]
+        y_train, y_test = y[train_indices], y[test_indices]
+        pl = PolynomialFeatures(degree=10, include_bias=False)
+        lm = LinearRegression()
+        pipeline = Pipeline([("pl", pl), ("lm", lm)])
+        pipeline.fit(X_train, y_train)
+        y_train_pred = pipeline.predict(X_train)
+        y_test_pred = pipeline.predict(X_test)
+        score = pipeline.score(X_test, y_test)
+        print score
     
 def run():
     vaderNLTK(HNData)
