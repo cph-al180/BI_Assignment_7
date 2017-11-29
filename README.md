@@ -80,5 +80,10 @@ def vaderNLTK(data):
 
 ## Part 3 - Housing price heatmap 
 
+ Brønshøj virker til at være det sted som er billigst at bo hvis man samtidig ønsker at bo tæt på centrum af københavn
+ Generelt ser det ud til at den vestlige del af København er dyrere end den østlige del
+
 ## Part 4 - Housing price model
+
+
 
