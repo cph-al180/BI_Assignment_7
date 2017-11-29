@@ -3,32 +3,32 @@
 ## Part 1 - Finding positive/negative posts
 
 Top 5 positive:  
-`a`  
-`a`  
-`a`  
-`a`  
-`a`  
+`Text: "sure" - pos: 1.0`  
+`Text: "ha!" - pos: 1.0`  
+`Text: "Beautiful." - pos: 1.0`  
+`Text: "Great, thanks!" - pos: 1.0`  
+`Text: "True" - pos: 1.0`  
 
 Top 5 negative:  
-`a`  
-`a`  
-`a`  
-`a`   
-`a`
+`Text: "dupe" - neg: 1.0`  
+`Text: "spam" - neg: 1.0`  
+`Text: "No." - neg: 1.0`  
+`Text: "dupe. " - neg: 1.0`   
+`Text: "desperation" - neg: 1.0`
 
 ## Part 2 - Classifying post emotions
 
 10-Fold Cross Validation results:  
-`1`  
-`2`  
-`3`  
-`4`  
-`5`  
-`6`  
-`7`  
-`8`  
-`9`  
-`10` 
+`1: 0.00561715393813`  
+`2: 0.0324921025367`  
+`3: -0.00537660312359`  
+`4: 0.0312217483345`  
+`5: 0.0288416783115`  
+`6: 0.0112348025737`  
+`7: 0.0388012324612`  
+`8: 0.021099872471`  
+`9: 0.0196133656656`  
+`10: 0.00498961244902` 
   
 Code for Part 1 & 2:  
 ```python
