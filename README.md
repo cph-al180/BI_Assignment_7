@@ -86,4 +86,6 @@ def vaderNLTK(data):
 ## Part 4 - Housing price model
 
 ![Results.png](Results.png)
+Eftersom pearsons viser 1 i alle rækker finder vi dette meget tvivlsomt, og vil gå ud fra der er sket en fejl et eller andet sted i koden, dog har det ikke været muligt for os at finde ud af hvad der præsist er gået galt.
+
 
