@@ -42,6 +42,7 @@ def vaderNLTK(data):
     fit_fn = np.poly1d(fit)
     plt.plot(X, y,'ro', X, fit_fn(X), 'b')
     plt.show()
+    plt.savefig('HackerNewsPlot.png')
     y = np.array([neg])
     y = y.T
     folds = KFold(n_splits = 10)
