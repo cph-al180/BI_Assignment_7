@@ -16,8 +16,10 @@ Top 5 negative:
 `Text: "dupe. " - neg: 1.0`   
 `Text: "desperation" - neg: 1.0`
 
-## Part 2 - Classifying post emotions
-
+## Part 2 - Classifying post emotions  
+Scatter plot showing the Vader sentiment with positive on the x-axis and negative on the y-axis.
+![Scatter Plot of Data](HackerNewsPlot.png)   
+  
 10-Fold Cross Validation results:  
 `1: 0.00561715393813`  
 `2: 0.0324921025367`  
