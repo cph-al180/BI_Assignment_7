@@ -85,5 +85,5 @@ def vaderNLTK(data):
 
 ## Part 4 - Housing price model
 
-
+![Skærmbillede 2017-11-29 kl. 19.20.41.png](Skærmbillede 2017-11-29 kl. 19.20.41.png)
 
