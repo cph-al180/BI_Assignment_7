@@ -13,8 +13,6 @@ import math
 import folium
 from folium.plugins import HeatMap
 
-
-
 #Uncomment if first time using Vader.
 #nltk.download('vader_lexicon')
 dataSet = "data/hn_items.csv"
@@ -64,15 +62,14 @@ def vaderNLTK(data):
         score = pipeline.score(X_test, y_test)
         print score
         
-def part3():
-    df = pd.read_csv("boliga_zealand.csv").drop(['Index', '_1', 'Unnamed: 0'], axis=1)
+def part3(df):
     dataset = df[['lon','lat','price']].dropna()
     folium_map = folium.Map(location=[55.6831224,12.5693172], zoom_start=10)
     heat_data = [(i.lat,i.lon,float(i.price)) for i in dataset.itertuples()]
     HeatMap(heat_data, radius=8).add_to(folium_map)
     folium_map.save('heatmap.html')
     
-def part4():
+def part4(df):
     distance_df = df.dropna()
     distance_df = distance_df.assign(distance_to_center=distance_df.apply(lambda row: calc_distance(row['lat'],row['lon'],55.676098, 12.568337),axis=1))
     
@@ -128,11 +125,11 @@ def calc_distance(lat1,lon1,lat2,lon2):
     return d
     
 def run():
-    vaderNLTK(HNData)    
-    part3()
-    part4()
-    print 'done'
+    vaderNLTK(HNData)
+    
+    df = pd.read_csv("boliga_zealand.csv").drop(['Index', '_1', 'Unnamed: 0'], axis=1)
+    part3(df)
+    part4(df)
+    print('done')
 
 run()
-
-
