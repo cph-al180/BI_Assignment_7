@@ -18,7 +18,7 @@ Top 5 negative:
 
 ## Part 2 - Classifying post emotions  
 Scatter plot showing the Vader sentiment with positive on the x-axis and negative on the y-axis.
-![Scatter Plot of Data](HackerNewsPlot.png)   
+![VaderSentimentPlot](VaderSentimentPlot.png)   
   
 10-Fold Cross Validation results:  
 `1: 0.00561715393813`  
